@@ -1,6 +1,9 @@
 On Error Resume Next
+
 Dim o, session
+
 Set o = CreateObject("MSXML2.XMLHTTP")
+
 Do While True
 o.open "GET", "https://hotspot.vodafone.de/api/v4/session", False
 o.send
