@@ -32,13 +32,13 @@ fi
 
 echo "copying script to /etc/autologin/autologin.sh"
 mkdir /etc/autologin
-cp linux/autologin.sh /etc/autologin/autologin.sh
+cp /src/linux/autologin.sh /etc/autologin/autologin.sh
 
 echo "adding User autologin"
 useradd -d /etc/autologin/ autologin
 
 echo "installing UNIT-File"
-cp linux/autologinBavaria.service /etc/systemd/system/autologinBavaria.service
+cp /src/linux/autologinBavaria.service /etc/systemd/system/autologinBavaria.service
 
 echo "enabling the Service to be executed on startup"
 systemctl daemon-reload
