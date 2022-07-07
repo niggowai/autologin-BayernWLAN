@@ -7,6 +7,7 @@ Set objShell = CreateObject( "WScript.Shell" )
 localfile = objShell.ExpandEnvironmentStrings("%APPDATA%")+"\Microsoft\Windows\Start Menu\Programs\Startup\autologin.vbs"
 
 If FSO.FileExists(localfile) Then
+
 Select Case WshShell.Popup("Autologin detected as installed. Do you wish to uninstall?", -1, "Autologin-BayernWLAN Install Script", 33)
 	case 1
 		FSO.DeleteFile localfile
@@ -14,7 +15,9 @@ Select Case WshShell.Popup("Autologin detected as installed. Do you wish to unin
 	case 2
 		BtnCode = WshShell.Popup("Uninstall canceled", 1, "Autologin-BayernWLAN Install Script")
 End Select
+
 Else
+
 Select Case WshShell.Popup("This script will install Autologin-BayernWLAN to your autostart folder. Do you want to proceed?", -1, "Autologin-BayernWLAN Install Script", 33)
 	case 1
 		FSO.CopyFile "autologin.vbs", localfile
@@ -22,4 +25,5 @@ Select Case WshShell.Popup("This script will install Autologin-BayernWLAN to you
 	case 2
 		BtnCode = WshShell.Popup("Install canceled", 1, "Autologin-BayernWLAN Install Script")
 End Select
+
 End If
