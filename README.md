@@ -30,6 +30,7 @@ run install.vbs and follow the instructions
 ### Linux
 
 systemd
+
 curl
 
 ## Uninstall
