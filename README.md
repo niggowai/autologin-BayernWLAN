@@ -1,4 +1,4 @@
-# autologin-BayernWLAN
+# autologin-BayernWLAN [License-shield]: https://img.shields.io/badge/license-MIT-yellow.svg
 simple scripts to create a background service to pass the captive page of @BayernWLAN Networks automatically
 
 ## Download
@@ -24,6 +24,8 @@ sudo ./install.sh
 ### Windows
 
 run install.vbs and follow the instructions
+
+Script will be active after reboot
 
 ## Requirements
 
