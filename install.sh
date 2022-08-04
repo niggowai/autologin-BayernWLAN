@@ -33,6 +33,7 @@ fi
 echo "copying script to /etc/autologin/autologin.sh"
 mkdir /etc/autologin
 cp src/linux/autologin.sh /etc/autologin/autologin.sh
+chmod +x /etc/autologin/autologin.sh
 
 echo "adding User autologin"
 useradd -d /etc/autologin/ autologin
