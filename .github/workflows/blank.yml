@@ -1,0 +1,15 @@
+image: registry.please-open.it/mdpdf:master
+
+cache:
+    paths:
+        - build
+
+deploy:docker:production:
+    stage: deploy
+    script:
+        - git log --date=short --pretty=format:' | %ad | %ae | %s | '  HEAD >> CHANGELOG.md
+        - cat CHANGELOG.md >> HOME-PAGE.md
+        - cat README.md >> HOME-PAGE.md
+        - mv HOME-PAGE.md DOCUMENT.md
+        - markdown-toc -i DOCUMENT.md
+        - mdpdf ${CI_PROJECT_DIR}/DOCUMENT.md --header ${CI_PROJECT_DIR}/header.html --footer${CI_PROJECT_DIR}/footer.html --style=style.css --gh-style --format=A4 --orientation=portrait
