@@ -2,7 +2,7 @@ on: deployment
 
 jobs:
     build:
-        runs-on: registry.please-open.it/mdpdf:master
+        runs-on: ubuntu:latest
         steps:
             - name: Markdown-to-pdf Generator
             - run: echo afasfafas
